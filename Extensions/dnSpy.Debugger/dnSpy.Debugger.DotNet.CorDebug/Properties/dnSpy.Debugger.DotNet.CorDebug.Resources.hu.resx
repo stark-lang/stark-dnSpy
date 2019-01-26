@@ -195,10 +195,10 @@ Hiba: {1}</value>
     <value>WaitSleepJoin</value>
   </data>
   <data name="UseDnSpy64ExeToDebug32" xml:space="preserve">
-    <value>dnSpy-x86.exe használata a 32 bites alkalmazások debuggolásához.</value>
+    <value>32 bites dnSpy használata 32 bites alkalmazások hibakereséséhez.</value>
   </data>
   <data name="UseDnSpyExeToDebug64" xml:space="preserve">
-    <value>dnSpy.exe használata a 64 bites alkalmazások debuggolásához.</value>
+    <value>64 bites dnSpy használata 64 bites alkalmazások hibakereséséhez.</value>
   </data>
   <data name="ExceptionMessageIsNull" xml:space="preserve">
     <value>"&lt; nincs kivétel üzenet &gt;"</value>

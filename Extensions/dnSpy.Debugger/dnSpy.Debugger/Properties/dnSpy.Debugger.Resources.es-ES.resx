@@ -142,10 +142,10 @@
     <value>Adjuntar al proceso</value>
   </data>
   <data name="Attach_UseDnSpy32" xml:space="preserve">
-    <value>Utilice dnSpy.exe para conectar a los procesos de 64 bits</value>
+    <value>Utilice dnSpy de 64-bit para conectar a los procesos de 64 bits</value>
   </data>
   <data name="Attach_UseDnSpy64" xml:space="preserve">
-    <value>Utilice dnSpy-x86.exe para conectar con los procesos de 32 bits</value>
+    <value>Utilice dnSpy de 32-bit para conectar a procesos de 32 bits</value>
   </data>
   <data name="BreakCommand" xml:space="preserve">
     <value>Rompe_r todos</value>

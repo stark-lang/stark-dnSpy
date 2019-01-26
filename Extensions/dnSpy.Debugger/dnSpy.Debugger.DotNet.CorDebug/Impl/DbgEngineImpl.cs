@@ -288,8 +288,14 @@ namespace dnSpy.Debugger.DotNet.CorDebug.Impl {
 		}
 
 		DbgModule TryGetModule(CorFrame frame, CorThread thread) {
-			if (frame == null)
-				frame = thread?.ActiveFrame ?? thread?.AllFrames.FirstOrDefault();
+			if (frame?.Function == null && thread != null) {
+				frame = thread.ActiveFrame;
+				if (frame?.Function == null) {
+					// Ignore the first frame(s) that have a null function. This rarely happens (eg. it
+					// happens when debugging dnSpy built for .NET Core x86)
+					frame = thread.AllFrames.FirstOrDefault(a => a.Function != null);
+				}
+			}
 			return TryGetModule(frame?.Function?.Module);
 		}
 
@@ -682,7 +688,16 @@ namespace dnSpy.Debugger.DotNet.CorDebug.Impl {
 				var cex = ex as COMException;
 				const int ERROR_NOT_SUPPORTED = unchecked((int)0x80070032);
 				string errMsg;
-				if (cex != null && cex.ErrorCode == ERROR_NOT_SUPPORTED)
+				if (ex is StartDebuggerException sde) {
+					switch (sde.Error) {
+					case StartDebuggerError.UnsupportedBitness:
+						errMsg = string.Format(dnSpy_Debugger_DotNet_CorDebug_Resources.Error_CouldNotStartDebugger, GetIncompatiblePlatformErrorMessage());
+						break;
+					default:
+						throw new InvalidOperationException();
+					}
+				}
+				else if (cex != null && cex.ErrorCode == ERROR_NOT_SUPPORTED)
 					errMsg = string.Format(dnSpy_Debugger_DotNet_CorDebug_Resources.Error_CouldNotStartDebugger, GetIncompatiblePlatformErrorMessage());
 				else if (cex != null && cex.ErrorCode == CordbgErrors.CORDBG_E_UNCOMPATIBLE_PLATFORMS)
 					errMsg = string.Format(dnSpy_Debugger_DotNet_CorDebug_Resources.Error_CouldNotStartDebugger, GetIncompatiblePlatformErrorMessage());
