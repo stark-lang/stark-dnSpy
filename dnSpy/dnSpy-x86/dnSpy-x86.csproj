@@ -20,6 +20,7 @@
   <PropertyGroup>
     <ApplicationIcon>..\dnSpy\Images\dnSpy-x86.ico</ApplicationIcon>
     <ApplicationManifest>..\dnSpy\app.manifest</ApplicationManifest>
+    <AssemblyName>stark-dnSpy-x86</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
