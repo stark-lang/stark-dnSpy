@@ -23,6 +23,7 @@
   <PropertyGroup>
     <ApplicationIcon>Images\dnSpy.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>starkSpy</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(IsDotNetFramework)' == 'true' ">
