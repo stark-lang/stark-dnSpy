@@ -113,7 +113,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConvertToNetstandardReferen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertToNetstandardReferences", "Build\ConvertToNetstandardReferences\ConvertToNetstandardReferences.csproj", "{49E10C0E-6ABF-4B81-A048-B3D3400F7511}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnlib", "..\dnlib\src\dnlib.csproj", "{E81E3A7D-C837-4AE0-A621-945242C9BD98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnlib", "..\stark-dnlib\src\dnlib.csproj", "{E81E3A7D-C837-4AE0-A621-945242C9BD98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

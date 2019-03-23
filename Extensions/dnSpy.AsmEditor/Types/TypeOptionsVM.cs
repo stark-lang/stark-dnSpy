@@ -58,6 +58,8 @@ namespace dnSpy.AsmEditor.Types {
 	enum TypeSemantics {
 		Class				= (int)TypeAttributes.Class >> 5,
 		Interface			= (int)TypeAttributes.Interface >> 5,
+		Struct              = (int)TypeAttributes.Struct >> 5,
+		UnmanagedStruct     = (int)TypeAttributes.UnmanagedStruct >> 5,
 	}
 
 	enum TypeStringFormat {

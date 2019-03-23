@@ -831,21 +831,21 @@ namespace dnSpy.Decompiler.CSharp {
 		string GetTypeKeyword(ITypeDefOrRef type) {
 			if (!ShowIntrinsicTypeKeywords)
 				return null;
-			if (type == null || type.DeclaringType != null || type.Namespace != "System" || !type.DefinitionAssembly.IsCorLib())
+			if (type == null || type.DeclaringType != null || type.Namespace != "system" || !type.DefinitionAssembly.IsCorLib())
 				return null;
 			switch (type.TypeName) {
 			case "Void":	return "void";
-			case "Boolean":	return "bool";
-			case "Byte":	return "byte";
-			case "Char":	return "char";
+			case "Bool":	return "bool";
+			case "UInt8":	return "byte";
+			case "Rune":	return "rune";
 			case "Decimal":	return "decimal";
-			case "Double":	return "double";
+			case "Float64":	return "double";
 			case "Int16":	return "short";
 			case "Int32":	return "int";
 			case "Int64":	return "long";
 			case "Object":	return "object";
-			case "SByte":	return "sbyte";
-			case "Single":	return "float";
+			case "Int8":	return "sbyte";
+			case "Float32":	return "float";
 			case "String":	return "string";
 			case "UInt16":	return "ushort";
 			case "UInt32":	return "uint";
@@ -927,18 +927,18 @@ namespace dnSpy.Decompiler.CSharp {
 
 				switch (type.ElementType) {
 				case ElementType.Void:			WriteSystemTypeKeyword("Void", "void", true); break;
-				case ElementType.Boolean:		WriteSystemTypeKeyword("Boolean", "bool", true); break;
-				case ElementType.Char:			WriteSystemTypeKeyword("Char", "char", true); break;
-				case ElementType.I1:			WriteSystemTypeKeyword("SByte", "sbyte", true); break;
-				case ElementType.U1:			WriteSystemTypeKeyword("Byte", "byte", true); break;
+				case ElementType.Boolean:		WriteSystemTypeKeyword("Bool", "bool", true); break;
+				case ElementType.Char:			WriteSystemTypeKeyword("Rune", "rune", true); break;
+				case ElementType.I1:			WriteSystemTypeKeyword("Int8", "sbyte", true); break;
+				case ElementType.U1:			WriteSystemTypeKeyword("UInt8", "byte", true); break;
 				case ElementType.I2:			WriteSystemTypeKeyword("Int16", "short", true); break;
 				case ElementType.U2:			WriteSystemTypeKeyword("UInt16", "ushort", true); break;
 				case ElementType.I4:			WriteSystemTypeKeyword("Int32", "int", true); break;
 				case ElementType.U4:			WriteSystemTypeKeyword("UInt32", "uint", true); break;
 				case ElementType.I8:			WriteSystemTypeKeyword("Int64", "long", true); break;
 				case ElementType.U8:			WriteSystemTypeKeyword("UInt64", "ulong", true); break;
-				case ElementType.R4:			WriteSystemTypeKeyword("Single", "float", true); break;
-				case ElementType.R8:			WriteSystemTypeKeyword("Double", "double", true); break;
+				case ElementType.R4:			WriteSystemTypeKeyword("Float32", "float", true); break;
+				case ElementType.R8:			WriteSystemTypeKeyword("Float64", "double", true); break;
 				case ElementType.String:		WriteSystemTypeKeyword("String", "string", false); break;
 				case ElementType.Object:		WriteSystemTypeKeyword("Object", "object", false); break;
 
