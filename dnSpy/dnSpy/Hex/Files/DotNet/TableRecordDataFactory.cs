@@ -270,7 +270,7 @@ namespace dnSpy.Hex.Files.DotNet {
 			new FlagInfo(0x0800, "SpecialName"),
 			new FlagInfo(0x1000, "RTSpecialName"),
 			new FlagInfo(0x2000, "PinvokeImpl"),
-			new FlagInfo(0x4000, "HasSecurity"),
+			new FlagInfo(0x4000, "IsReadOnly"),
 			new FlagInfo(0x8000, "RequireSecObject"),
 		});
 

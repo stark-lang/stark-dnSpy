@@ -176,7 +176,7 @@ namespace dnSpy.AsmEditor.Method {
 					OnPropertyChanged(nameof(PinvokeImpl));
 					OnPropertyChanged(nameof(UnmanagedExport));
 					OnPropertyChanged(nameof(RTSpecialName));
-					OnPropertyChanged(nameof(HasSecurity));
+					OnPropertyChanged(nameof(IsReadOnly));
 					OnPropertyChanged(nameof(RequireSecObject));
 					ImplMapVM.IsEnabled = PinvokeImpl;
 					if (oldStatic != Static && MethodSigCreator.HasThis != !Static)
@@ -237,9 +237,9 @@ namespace dnSpy.AsmEditor.Method {
 			set => SetFlagValue(MethodAttributes.RTSpecialName, value);
 		}
 
-		public bool HasSecurity {
-			get => GetFlagValue(MethodAttributes.HasSecurity);
-			set => SetFlagValue(MethodAttributes.HasSecurity, value);
+		public bool IsReadOnly {
+			get => GetFlagValue(MethodAttributes.IsReadOnly);
+			set => SetFlagValue(MethodAttributes.IsReadOnly, value);
 		}
 
 		public bool RequireSecObject {
@@ -377,9 +377,9 @@ namespace dnSpy.AsmEditor.Method {
 			options.Overrides.Clear();
 			options.Overrides.AddRange(MethodOverridesVM.Collection.Select(a => a.CreateMethodOverrideOptions().Create()));
 			if (ModelUtils.GetHasSecurityBit(options.DeclSecurities, options.CustomAttributes))
-				options.Attributes |= MethodAttributes.HasSecurity;
+				options.Attributes |= MethodAttributes.IsReadOnly;
 			else
-				options.Attributes &= ~MethodAttributes.HasSecurity;
+				options.Attributes &= ~MethodAttributes.IsReadOnly;
 			return options;
 		}
 

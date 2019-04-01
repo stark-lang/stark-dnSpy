@@ -186,24 +186,11 @@ namespace dnSpy.Contracts.Decompiler {
 				else
 					return false;
 			}
-			var defaultMemberName = GetDefaultMemberName(basePropDef.DeclaringType);
+			var defaultMemberName = "Item";
 			if (defaultMemberName == basePropDef.Name)
 				return true;
 
 			return false;
-		}
-
-		static string GetDefaultMemberName(TypeDef type) {
-			if (type == null)
-				return null;
-			foreach (var ca in type.CustomAttributes.FindAll("System.Reflection.DefaultMemberAttribute")) {
-				if (ca.Constructor != null && ca.Constructor.FullName == @"System.Void System.Reflection.DefaultMemberAttribute::.ctor(System.String)" &&
-					ca.ConstructorArguments.Count == 1 &&
-					ca.ConstructorArguments[0].Value is UTF8String) {
-					return (UTF8String)ca.ConstructorArguments[0].Value;
-				}
-			}
-			return null;
 		}
 
 		/// <summary>

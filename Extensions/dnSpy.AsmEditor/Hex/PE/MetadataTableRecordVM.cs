@@ -565,7 +565,7 @@ namespace dnSpy.AsmEditor.Hex.PE {
 				field.Add(new BooleanHexBitField("SpecialName", 11));
 				field.Add(new BooleanHexBitField("RTSpecialName", 12));
 				field.Add(new BooleanHexBitField("PinvokeImpl", 13));
-				field.Add(new BooleanHexBitField("HasSecurity", 14));
+				field.Add(new BooleanHexBitField("IsReadOnly", 14));
 				field.Add(new BooleanHexBitField("RequireSecObject", 15));
 				return field;
 			}
