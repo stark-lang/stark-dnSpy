@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -211,7 +211,7 @@
     <value>Derived Types</value>
   </data>
   <data name="DotNetExes" xml:space="preserve">
-    <value>.NET Executables</value>
+    <value>Stark Assemblies</value>
   </data>
   <data name="EmptyTabTitle" xml:space="preserve">
     <value>&lt;empty&gt;</value>

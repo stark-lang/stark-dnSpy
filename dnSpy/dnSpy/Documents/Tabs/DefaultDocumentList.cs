@@ -312,9 +312,7 @@ namespace dnSpy.Documents.Tabs {
 				}
 
 				var f = Path.Combine(refFilePath, AssemblyName);
-				var fn = f + ".dll";
-				if (!File.Exists(fn))
-					fn = f + ".exe";
+				var fn = f + ".sklib";
 				if (!File.Exists(fn))
 					fn = string.Empty;
 				Filename = fn;

@@ -831,7 +831,7 @@ namespace dnSpy.Decompiler.CSharp {
 		string GetTypeKeyword(ITypeDefOrRef type) {
 			if (!ShowIntrinsicTypeKeywords)
 				return null;
-			if (type == null || type.DeclaringType != null || type.Namespace != "system" || !type.DefinitionAssembly.IsCorLib())
+			if (type == null || type.DeclaringType != null || type.Namespace != "core" || !type.DefinitionAssembly.IsCorLib())
 				return null;
 			switch (type.TypeName) {
 			case "Void":	return "void";

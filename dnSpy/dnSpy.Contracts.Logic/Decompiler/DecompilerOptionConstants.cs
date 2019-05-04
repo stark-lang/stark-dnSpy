@@ -172,7 +172,7 @@ namespace dnSpy.Contracts.Decompiler {
 		/// <summary />
 		public static readonly Guid SortSystemUsingStatementsFirst_GUID = new Guid("48BF91F6-A186-45B9-8A79-EEFEA5E5BAB1");
 		/// <summary />
-		public static readonly string SortSystemUsingStatementsFirst_NAME = "system-first";
+		public static readonly string SortSystemUsingStatementsFirst_NAME = "core-first";
 
 		/// <summary />
 		public static readonly Guid MaxArrayElements_GUID = new Guid("E0DEC360-EE40-4F61-9106-D9F142F4CC9A");

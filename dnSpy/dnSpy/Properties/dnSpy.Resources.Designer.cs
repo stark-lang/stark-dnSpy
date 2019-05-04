@@ -1702,7 +1702,7 @@ namespace dnSpy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .NET Executables.
+        ///   Looks up a localized string similar to Stark Assemblies.
         /// </summary>
         public static string DotNetExes {
             get {
