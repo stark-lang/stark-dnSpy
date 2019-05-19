@@ -236,6 +236,7 @@ namespace dnSpy.AsmEditor.Types {
 		UTF8String name;
 
 		public NullableUInt16VM PackingSize { get; }
+		public NullableUInt16VM Alignment { get; }
 		public NullableUInt32VM ClassSize { get; }
 
 		public TypeSig BaseTypeSig {
@@ -276,6 +277,7 @@ namespace dnSpy.AsmEditor.Types {
 			TypeLayout = new EnumListVM(typeLayoutList, (a, b) => InitializeTypeKind());
 			TypeSemantics = new EnumListVM(typeSemanticsList, (a, b) => InitializeTypeKind());
 			PackingSize = new NullableUInt16VM(a => HasErrorUpdated());
+			Alignment = new NullableUInt16VM(a => HasErrorUpdated());
 			ClassSize = new NullableUInt32VM(a => HasErrorUpdated());
 
 			Types.TypeVisibility start, end;
@@ -452,6 +454,7 @@ namespace dnSpy.AsmEditor.Types {
 			Namespace = options.Namespace;
 			Name = options.Name;
 			PackingSize.Value = options.PackingSize;
+			Alignment.Value = options.Alignment;
 			ClassSize.Value = options.ClassSize;
 			BaseTypeSig = options.BaseType.ToTypeSig();
 			TypeVisibility.SelectedItem = (Types.TypeVisibility)((int)(options.Attributes & TypeAttributes.VisibilityMask) >> 0);
@@ -487,6 +490,6 @@ namespace dnSpy.AsmEditor.Types {
 			return options;
 		}
 
-		public override bool HasError => PackingSize.HasError || ClassSize.HasError;
+		public override bool HasError => PackingSize.HasError || Alignment.HasError || ClassSize.HasError;
 	}
 }

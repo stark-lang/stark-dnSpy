@@ -75,9 +75,12 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl {
 			get {
 				if (IsInterface || HasElementType || IsGenericParameter)
 					return null;
-				var (packingSize, classSize) = GetClassLayout();
+				var (packingSize, alignment, classSize) = GetClassLayout();
 				if (packingSize <= 0)
 					packingSize = 8;
+
+				if (alignment <= 0)
+					alignment = 8;
 
 				LayoutKind layoutKind;
 				switch (Attributes & DmdTypeAttributes.LayoutMask) {
@@ -104,7 +107,7 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl {
 			}
 		}
 
-		protected abstract (int packingSize, int classSize) GetClassLayout();
+		protected abstract (int packingSize, int alignment, int classSize) GetClassLayout();
 
 		public override DmdType DeclaringType {
 			get {

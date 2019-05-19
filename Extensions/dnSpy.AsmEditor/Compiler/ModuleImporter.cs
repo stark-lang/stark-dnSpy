@@ -1340,6 +1340,7 @@ namespace dnSpy.AsmEditor.Compiler {
 			options.Namespace = compiledType.Namespace;
 			options.Name = compiledType.Name;
 			options.PackingSize = compiledType.ClassLayout?.PackingSize;
+			options.Alignment = compiledType.ClassLayout?.Alignment;
 			options.ClassSize = compiledType.ClassLayout?.ClassSize;
 			options.BaseType = Import(compiledType.BaseType);
 			options.CustomAttributes.Clear();
@@ -1834,7 +1835,7 @@ namespace dnSpy.AsmEditor.Compiler {
 		ClassLayout Import(ClassLayout classLayout) {
 			if (classLayout == null)
 				return null;
-			return targetModule.UpdateRowId(new ClassLayoutUser(classLayout.PackingSize, classLayout.ClassSize));
+			return targetModule.UpdateRowId(new ClassLayoutUser(classLayout.PackingSize, classLayout.Alignment, classLayout.ClassSize));
 		}
 
 		CallingConventionSig Import(CallingConventionSig signature) {

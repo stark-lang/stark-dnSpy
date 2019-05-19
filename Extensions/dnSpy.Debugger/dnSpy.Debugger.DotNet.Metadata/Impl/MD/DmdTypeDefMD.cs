@@ -161,10 +161,10 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl.MD {
 			return (cas, sas);
 		}
 
-		protected override (int packingSize, int classSize) GetClassLayout() {
+		protected override (int packingSize, int alignment, int classSize) GetClassLayout() {
 			if (!reader.TablesStream.TryReadClassLayoutRow(reader.Metadata.GetClassLayoutRid(Rid), out var row))
-				return (0, 0);
-			return (row.PackingSize, (int)row.ClassSize);
+				return (0, 0, 0);
+			return (row.PackingSize, row.Alignment, (int)row.ClassSize);
 		}
 	}
 }

@@ -26,6 +26,7 @@ namespace dnSpy.AsmEditor.Types {
 		public UTF8String Namespace;
 		public UTF8String Name;
 		public ushort? PackingSize;
+		public ushort? Alignment;
 		public uint? ClassSize;
 		public ITypeDefOrRef BaseType;
 		public List<CustomAttribute> CustomAttributes = new List<CustomAttribute>();
@@ -42,10 +43,12 @@ namespace dnSpy.AsmEditor.Types {
 			Name = type.Name;
 			if (type.ClassLayout == null) {
 				PackingSize = null;
+				Alignment = null;
 				ClassSize = null;
 			}
 			else {
 				PackingSize = type.ClassLayout.PackingSize;
+				Alignment = type.ClassLayout.Alignment;
 				ClassSize = type.ClassLayout.ClassSize;
 			}
 			BaseType = type.BaseType;
@@ -59,8 +62,8 @@ namespace dnSpy.AsmEditor.Types {
 			type.Attributes = Attributes;
 			type.Namespace = Namespace ?? UTF8String.Empty;
 			type.Name = Name ?? UTF8String.Empty;
-			if (PackingSize != null || ClassSize != null)
-				type.ClassLayout = ownerModule.UpdateRowId(new ClassLayoutUser(PackingSize ?? 0, ClassSize ?? 0));
+			if (PackingSize != null || Alignment != null || ClassSize != null)
+				type.ClassLayout = ownerModule.UpdateRowId(new ClassLayoutUser(PackingSize ?? 0, Alignment ?? 0, ClassSize ?? 0));
 			else
 				type.ClassLayout = null;
 			type.BaseType = BaseType;
@@ -82,6 +85,7 @@ namespace dnSpy.AsmEditor.Types {
 			Namespace = ns ?? UTF8String.Empty,
 			Name = name ?? UTF8String.Empty,
 			PackingSize = null,
+			Alignment = null,
 			ClassSize = null,
 			BaseType = baseType,
 		};

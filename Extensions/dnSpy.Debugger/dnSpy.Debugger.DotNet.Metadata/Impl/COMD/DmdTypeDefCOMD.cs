@@ -187,11 +187,11 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl.COMD {
 			return (cas, sas);
 		}
 
-		protected override (int packingSize, int classSize) GetClassLayout() => COMThread(GetClassLayout_COMThread);
-		(int packingSize, int classSize) GetClassLayout_COMThread() {
+		protected override (int packingSize, int alignment, int classSize) GetClassLayout() => COMThread(GetClassLayout_COMThread);
+		(int packingSize, int alignment, int classSize) GetClassLayout_COMThread() {
 			reader.Dispatcher.VerifyAccess();
-			MDAPI.GetClassLayout(reader.MetaDataImport, 0x02000000 + Rid, out ushort packingSize, out uint classSize);
-			return (packingSize, (int)classSize);
+			MDAPI.GetClassLayout(reader.MetaDataImport, 0x02000000 + Rid, out ushort packingSize, out ushort alignment, out uint classSize);
+			return (packingSize, alignment, (int)classSize);
 		}
 	}
 }

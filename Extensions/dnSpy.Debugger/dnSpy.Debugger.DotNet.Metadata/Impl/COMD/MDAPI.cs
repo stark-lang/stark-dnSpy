@@ -41,8 +41,9 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl.COMD {
 			return mdi.IsValidToken(token);
 		}
 
-		public unsafe static bool GetClassLayout(IMetaDataImport2 mdi, uint token, out ushort packingSize, out uint classSize) {
+		public unsafe static bool GetClassLayout(IMetaDataImport2 mdi, uint token, out ushort packingSize, out ushort alignment, out uint classSize) {
 			packingSize = 0;
+			alignment = 0;
 			classSize = 0;
 			if (mdi == null)
 				return false;
