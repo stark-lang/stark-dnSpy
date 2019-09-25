@@ -353,8 +353,7 @@ namespace dnSpy.AsmEditor.Types {
 			!Sealed;
 
 		bool IsStruct() =>
-			IsSystemValueType(BaseTypeSig) &&
-			(Types.TypeSemantics)TypeSemantics.SelectedItem == Types.TypeSemantics.Class &&
+			(Types.TypeSemantics)TypeSemantics.SelectedItem == Types.TypeSemantics.Struct &&
 			!Abstract &&
 			Sealed;
 

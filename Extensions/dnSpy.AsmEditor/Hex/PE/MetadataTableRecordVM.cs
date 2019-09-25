@@ -406,6 +406,7 @@ namespace dnSpy.AsmEditor.Hex.PE {
 		static readonly IntegerHexBitFieldEnumInfo[] SemanticsInfos = new IntegerHexBitFieldEnumInfo[] {
 			new IntegerHexBitFieldEnumInfo(0, "Class"),
 			new IntegerHexBitFieldEnumInfo(1, "Interface"),
+			new IntegerHexBitFieldEnumInfo(2, "Struct"),
 		};
 
 		static readonly IntegerHexBitFieldEnumInfo[] StringFormatInfos = new IntegerHexBitFieldEnumInfo[] {
@@ -432,7 +433,7 @@ namespace dnSpy.AsmEditor.Hex.PE {
 			var field = new UInt32FlagsHexField(buffer, name, colInfo.Name, startOffset + (uint)colInfo.Offset);
 			field.Add(new IntegerHexBitField("Visibility", 0, 3, VisibilityInfos));
 			field.Add(new IntegerHexBitField("Layout", 3, 2, LayoutInfos));
-			field.Add(new IntegerHexBitField("Semantics", 5, 1, SemanticsInfos));
+			field.Add(new IntegerHexBitField("Semantics", 5, 2, SemanticsInfos));
 			field.Add(new BooleanHexBitField("Abstract", 7));
 			field.Add(new BooleanHexBitField("Sealed", 8));
 			field.Add(new BooleanHexBitField("SpecialName", 10));

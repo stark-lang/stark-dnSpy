@@ -93,7 +93,7 @@ namespace dndbg.DotNet {
 			if (!b)
 				ClassLayout = null;
 			else
-				ClassLayout = readerModule.UpdateRowId(new ClassLayoutUser(packingSize, classSize));
+				ClassLayout = readerModule.UpdateRowId(new ClassLayoutUser(packingSize, 0, classSize));
 		}
 
 		unsafe Dictionary<uint, uint> CalculateFieldOffsets() {
