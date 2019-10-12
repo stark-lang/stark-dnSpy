@@ -217,8 +217,8 @@ namespace dnSpy.Debugger.DotNet.Metadata {
 
 					if ((toParamCorType != DDN.ElementType.Boolean)
 						&& (fromParamCorType != DDN.ElementType.Boolean)
-						&& (toParamCorType != DDN.ElementType.Char)
-						&& (fromParamCorType != DDN.ElementType.Char)) {
+						&& (toParamCorType != DDN.ElementType.Rune)
+						&& (fromParamCorType != DDN.ElementType.Rune)) {
 						if ((__Size(toParamCorType) == __Size(fromParamCorType))
 							&& (__IsFloat(toParamCorType) == __IsFloat(fromParamCorType))) {
 							return __CastResult.CanCast;
@@ -258,8 +258,8 @@ namespace dnSpy.Debugger.DotNet.Metadata {
 
 					if ((toParamCorType != DDN.ElementType.Boolean)
 						&& (fromParamCorType != DDN.ElementType.Boolean)
-						&& (toParamCorType != DDN.ElementType.Char)
-						&& (fromParamCorType != DDN.ElementType.Char)) {
+						&& (toParamCorType != DDN.ElementType.Rune)
+						&& (fromParamCorType != DDN.ElementType.Rune)) {
 						if ((__Size(toParamCorType) == __Size(fromParamCorType))
 							&& (__IsFloat(toParamCorType) == __IsFloat(fromParamCorType))) {
 							return true;
@@ -321,7 +321,7 @@ namespace dnSpy.Debugger.DotNet.Metadata {
 			case DDN.ElementType.End:			return -1;
 			case DDN.ElementType.Void:			return 0;
 			case DDN.ElementType.Boolean:		return 1;
-			case DDN.ElementType.Char:			return 2;
+			case DDN.ElementType.Rune:			return 2;
 			case DDN.ElementType.I1:
 			case DDN.ElementType.U1:			return 1;
 			case DDN.ElementType.I2:
@@ -390,7 +390,7 @@ namespace dnSpy.Debugger.DotNet.Metadata {
 					switch (MetadataName) {
 					case "Void":	if (this == AppDomain.System_Void)		return DDN.ElementType.Void; break;
 					case "Boolean":	if (this == AppDomain.System_Boolean)	return DDN.ElementType.Boolean; break;
-					case "Char":	if (this == AppDomain.System_Char)		return DDN.ElementType.Char; break;
+					case "Char":	if (this == AppDomain.System_Char)		return DDN.ElementType.Rune; break;
 					case "SByte":	if (this == AppDomain.System_SByte)		return DDN.ElementType.I1; break;
 					case "Byte":	if (this == AppDomain.System_Byte)		return DDN.ElementType.U1; break;
 					case "Int16":	if (this == AppDomain.System_Int16)		return DDN.ElementType.I2; break;

@@ -33,7 +33,7 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl {
 	enum SerializationType : byte {
 		Undefined	= 0,
 		Boolean		= DMD.ElementType.Boolean,
-		Char		= DMD.ElementType.Char,
+		Char		= DMD.ElementType.Rune,
 		I1			= DMD.ElementType.I1,
 		U1			= DMD.ElementType.U1,
 		I2			= DMD.ElementType.I2,

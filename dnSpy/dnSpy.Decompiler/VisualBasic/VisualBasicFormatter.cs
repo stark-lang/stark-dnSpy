@@ -925,7 +925,7 @@ namespace dnSpy.Decompiler.VisualBasic {
 				switch (type.ElementType) {
 				case ElementType.Void:			WriteSystemType("Void", true); break;
 				case ElementType.Boolean:		WriteSystemTypeKeyword("Boolean", "Boolean", true); break;
-				case ElementType.Char:			WriteSystemTypeKeyword("Char", "Char", true); break;
+				case ElementType.Rune:			WriteSystemTypeKeyword("Rune", "Rune", true); break;
 				case ElementType.I1:			WriteSystemTypeKeyword("SByte", "SByte", true); break;
 				case ElementType.U1:			WriteSystemTypeKeyword("Byte", "Byte", true); break;
 				case ElementType.I2:			WriteSystemTypeKeyword("Int16", "Short", true); break;

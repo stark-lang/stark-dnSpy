@@ -31,7 +31,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 		Object,	// Can only be used by CANamedArgumentVM
 		Boolean,
-		Char,
+		Rune,
 		SByte,
 		Byte,
 		Int16,
@@ -89,7 +89,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			{ ConstantType.Null,		new EnumVM(ConstantType.Null,			"null") },
 			{ ConstantType.Object,		new EnumVM(ConstantType.Object,			"Object") },
 			{ ConstantType.Boolean,		new EnumVM(ConstantType.Boolean,		"Boolean") },
-			{ ConstantType.Char,		new EnumVM(ConstantType.Char,			"Char") },
+			{ ConstantType.Rune,		new EnumVM(ConstantType.Rune,			"Rune") },
 			{ ConstantType.SByte,		new EnumVM(ConstantType.SByte,			"SByte") },
 			{ ConstantType.Int16,		new EnumVM(ConstantType.Int16,			"Int16") },
 			{ ConstantType.Int32,		new EnumVM(ConstantType.Int32,			"Int32") },
@@ -155,7 +155,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 				switch ((ConstantType)ConstantTypeEnumList.SelectedItem) {
 				case ConstantType.Null:			return null;
 				case ConstantType.Boolean:		return Boolean.Value;
-				case ConstantType.Char:			return Char.Value;
+				case ConstantType.Rune:			return Char.Value;
 				case ConstantType.SByte:		return SByte.Value;
 				case ConstantType.Int16:		return Int16.Value;
 				case ConstantType.Int32:		return Int32.Value;
@@ -195,7 +195,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 					Boolean.Value = (bool)value;
 				}
 				else if (value is char) {
-					SetSelectedItem(ConstantType.Char);
+					SetSelectedItem(ConstantType.Rune);
 					Char.Value = (char)value;
 				}
 				else if (value is sbyte) {
@@ -418,7 +418,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 		public bool NullIsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Null;
 		public bool BooleanIsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Boolean;
-		public bool CharIsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Char;
+		public bool CharIsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Rune;
 		public bool SByteIsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.SByte;
 		public bool Int16IsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Int16;
 		public bool Int32IsSelected => (ConstantType)ConstantTypeEnumList.SelectedItem == ConstantType.Int32;
@@ -819,7 +819,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 				switch ((ConstantType)ConstantTypeEnumList.SelectedItem) {
 				case ConstantType.Null:			break;
 				case ConstantType.Boolean:		if (Boolean.HasError) return true; break;
-				case ConstantType.Char:			if (Char.HasError) return true; break;
+				case ConstantType.Rune:			if (Char.HasError) return true; break;
 				case ConstantType.SByte:		if (SByte.HasError) return true; break;
 				case ConstantType.Int16:		if (Int16.HasError) return true; break;
 				case ConstantType.Int32:		if (Int32.HasError) return true; break;

@@ -44,7 +44,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 		static readonly ConstantType[] ConstantTypes = new ConstantType[] {
 			ConstantType.Null,
 			ConstantType.Boolean,
-			ConstantType.Char,
+			ConstantType.Rune,
 			ConstantType.SByte,
 			ConstantType.Byte,
 			ConstantType.Int16,
@@ -120,7 +120,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			TypeDef td;
 			switch (et) {
 			case ElementType.Boolean:
-			case ElementType.Char:
+			case ElementType.Rune:
 			case ElementType.I1:
 			case ElementType.U1:
 			case ElementType.I2:
@@ -166,7 +166,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 				if (value == null) {
 					switch (elemType.GetElementType()) {
 					case ElementType.Boolean:	return Null<bool[]>.Instance;
-					case ElementType.Char:		return Null<char[]>.Instance;
+					case ElementType.Rune:		return Null<char[]>.Instance;
 					case ElementType.I1:		return Null<sbyte[]>.Instance;
 					case ElementType.U1:		return Null<byte[]>.Instance;
 					case ElementType.I2:		return Null<short[]>.Instance;
@@ -197,7 +197,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 				switch (elemType.GetElementType()) {
 				case ElementType.Boolean:	return ConvertArray<bool>(elemType, oldList);
-				case ElementType.Char:		return ConvertArray<char>(elemType, oldList);
+				case ElementType.Rune:		return ConvertArray<char>(elemType, oldList);
 				case ElementType.I1:		return ConvertArray<sbyte>(elemType, oldList);
 				case ElementType.U1:		return ConvertArray<byte>(elemType, oldList);
 				case ElementType.I2:		return ConvertArray<short>(elemType, oldList);
@@ -240,7 +240,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 			switch (underlyingElemType) {
 			case ElementType.Boolean:	return ConvertEnum<bool>(elemType, oldList);
-			case ElementType.Char:		return ConvertEnum<char>(elemType, oldList);
+			case ElementType.Rune:		return ConvertEnum<char>(elemType, oldList);
 			case ElementType.I1:		return ConvertEnum<sbyte>(elemType, oldList);
 			case ElementType.U1:		return ConvertEnum<byte>(elemType, oldList);
 			case ElementType.I2:		return ConvertEnum<short>(elemType, oldList);
@@ -314,7 +314,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 			switch (ModelUtils.GetElementType(value.GetType())) {
 			case ElementType.Boolean:return new CAArgument(module.CorLibTypes.Boolean, value);
-			case ElementType.Char:	return new CAArgument(module.CorLibTypes.Char, value);
+			case ElementType.Rune:	return new CAArgument(module.CorLibTypes.Char, value);
 			case ElementType.I1:	return new CAArgument(module.CorLibTypes.SByte, value);
 			case ElementType.U1:	return new CAArgument(module.CorLibTypes.Byte, value);
 			case ElementType.I2:	return new CAArgument(module.CorLibTypes.Int16, value);

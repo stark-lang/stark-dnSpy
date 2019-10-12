@@ -112,7 +112,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 		static readonly ConstantType[] validTypes = new ConstantType[] {
 			ConstantType.Object,
 			ConstantType.Boolean,
-			ConstantType.Char,
+			ConstantType.Rune,
 			ConstantType.SByte,
 			ConstantType.Byte,
 			ConstantType.Int16,
@@ -207,7 +207,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			switch (t.GetElementType())
 			{
 			case ElementType.Boolean:	return ConstantType.Boolean;
-			case ElementType.Char:		return ConstantType.Char;
+			case ElementType.Rune:		return ConstantType.Rune;
 			case ElementType.I1:		return ConstantType.SByte;
 			case ElementType.U1:		return ConstantType.Byte;
 			case ElementType.I2:		return ConstantType.Int16;
@@ -233,7 +233,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 				var elemType = t.Next.RemovePinnedAndModifiers();
 				switch (elemType.GetElementType()) {
 				case ElementType.Boolean:	return ConstantType.BooleanArray;
-				case ElementType.Char:		return ConstantType.CharArray;
+				case ElementType.Rune:		return ConstantType.CharArray;
 				case ElementType.I1:		return ConstantType.SByteArray;
 				case ElementType.U1:		return ConstantType.ByteArray;
 				case ElementType.I2:		return ConstantType.Int16Array;
@@ -272,7 +272,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			switch (ct) {
 			case ConstantType.Object:	return ownerModule.CorLibTypes.Object;
 			case ConstantType.Boolean:	return ownerModule.CorLibTypes.Boolean;
-			case ConstantType.Char:		return ownerModule.CorLibTypes.Char;
+			case ConstantType.Rune:		return ownerModule.CorLibTypes.Char;
 			case ConstantType.SByte:	return ownerModule.CorLibTypes.SByte;
 			case ConstantType.Byte:		return ownerModule.CorLibTypes.Byte;
 			case ConstantType.Int16:	return ownerModule.CorLibTypes.Int16;

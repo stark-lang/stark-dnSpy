@@ -33,7 +33,7 @@ namespace dnSpy.AsmEditor.ViewHelpers {
 
 		static readonly ConstantType[] DefaultConstants = new ConstantType[] {
 			ConstantType.Boolean,
-			ConstantType.Char,
+			ConstantType.Rune,
 			ConstantType.SByte,
 			ConstantType.Byte,
 			ConstantType.Int16,

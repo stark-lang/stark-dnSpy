@@ -41,7 +41,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 
 			switch (ModelUtils.GetElementType(value.GetType())) {
 			case ElementType.Boolean:return SimpleTypeConverter.ToString((bool)value);
-			case ElementType.Char:	return SimpleTypeConverter.ToString((char)value);
+			case ElementType.Rune:	return SimpleTypeConverter.ToString((char)value);
 			case ElementType.I1:	return AddCast(SimpleTypeConverter.ToString((sbyte)value), addCast, value.GetType().FullName);
 			case ElementType.U1:	return AddCast(SimpleTypeConverter.ToString((byte)value), addCast, value.GetType().FullName);
 			case ElementType.I2:	return AddCast(SimpleTypeConverter.ToString((short)value), addCast, value.GetType().FullName);

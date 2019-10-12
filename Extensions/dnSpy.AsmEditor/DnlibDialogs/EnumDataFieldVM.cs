@@ -191,7 +191,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 		protected override DataFieldVM CreateEnumUnderlyingTypeField(ElementType elementType) {
 			switch (elementType) {
 			case ElementType.Boolean:	return new BooleanVM(a => { });
-			case ElementType.Char:		return new CharVM(a => { });
+			case ElementType.Rune:		return new CharVM(a => { });
 			case ElementType.I1:		return new SByteVM(a => { });
 			case ElementType.U1:		return new ByteVM(a => { });
 			case ElementType.I2:		return new Int16VM(a => { });
@@ -236,7 +236,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 		protected override DataFieldVM CreateEnumUnderlyingTypeField(ElementType elementType) {
 			switch (elementType) {
 			case ElementType.Boolean:	return new BooleanListDataFieldVM(a => { });
-			case ElementType.Char:		return new CharListDataFieldVM(a => { });
+			case ElementType.Rune:		return new CharListDataFieldVM(a => { });
 			case ElementType.I1:		return new SByteListDataFieldVM(a => { });
 			case ElementType.U1:		return new ByteListDataFieldVM(a => { });
 			case ElementType.I2:		return new Int16ListDataFieldVM(a => { });

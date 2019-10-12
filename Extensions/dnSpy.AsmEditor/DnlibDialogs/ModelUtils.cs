@@ -39,7 +39,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			var tc = type == null ? TypeCode.Empty : Type.GetTypeCode(type);
 			switch (tc) {
 			case TypeCode.Boolean:	return ElementType.Boolean;
-			case TypeCode.Char:		return ElementType.Char;
+			case TypeCode.Char:		return ElementType.Rune;
 			case TypeCode.SByte:	return ElementType.I1;
 			case TypeCode.Byte:		return ElementType.U1;
 			case TypeCode.Int16:	return ElementType.I2;
@@ -69,7 +69,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 			var t = type.RemovePinnedAndModifiers();
 			switch (t.GetElementType()) {
 			case ElementType.Boolean:return false;
-			case ElementType.Char:	return (char)0;
+			case ElementType.Rune:	return (char)0;
 			case ElementType.I1:	return (sbyte)0;
 			case ElementType.U1:	return (byte)0;
 			case ElementType.I2:	return (short)0;
@@ -95,7 +95,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 					break;
 				switch (td.GetEnumUnderlyingType().RemovePinnedAndModifiers().GetElementType()) {
 				case ElementType.Boolean:return false;
-				case ElementType.Char:	return (char)0;
+				case ElementType.Rune:	return (char)0;
 				case ElementType.I1:	return (sbyte)0;
 				case ElementType.U1:	return (byte)0;
 				case ElementType.I2: 	return (short)0;

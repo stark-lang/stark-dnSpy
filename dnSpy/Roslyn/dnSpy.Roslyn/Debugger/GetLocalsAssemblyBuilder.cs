@@ -218,7 +218,7 @@ namespace dnSpy.Roslyn.Debugger {
 		Instruction LoadIndirect(TypeSig type) {
 			switch (type.GetElementType()) {
 			case ElementType.Boolean:		return Instruction.Create(OpCodes.Ldind_I1);
-			case ElementType.Char:			return Instruction.Create(OpCodes.Ldind_U2);
+			case ElementType.Rune:			return Instruction.Create(OpCodes.Ldind_U2);
 			case ElementType.I1:			return Instruction.Create(OpCodes.Ldind_I1);
 			case ElementType.U1:			return Instruction.Create(OpCodes.Ldind_U1);
 			case ElementType.I2:			return Instruction.Create(OpCodes.Ldind_I2);

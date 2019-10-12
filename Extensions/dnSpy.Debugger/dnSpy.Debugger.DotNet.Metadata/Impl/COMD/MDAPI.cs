@@ -773,7 +773,7 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl.COMD {
 			// size is always 0 unless it's a string...
 			switch (elementType) {
 			case ElementType.Boolean:	return *p != 0;
-			case ElementType.Char:		return *(char*)p;
+			case ElementType.Rune:		return *(char*)p;
 			case ElementType.I1:		return *(sbyte*)p;
 			case ElementType.U1:		return *p;
 			case ElementType.I2:		return *(short*)p;

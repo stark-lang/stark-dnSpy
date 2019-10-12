@@ -1046,7 +1046,7 @@ namespace dnSpy.AsmEditor.Compiler {
 				switch (a.ElementType) {
 				case ElementType.Void:
 				case ElementType.Boolean:
-				case ElementType.Char:
+				case ElementType.Rune:
 				case ElementType.I1:
 				case ElementType.U1:
 				case ElementType.I2:
@@ -1162,7 +1162,7 @@ namespace dnSpy.AsmEditor.Compiler {
 			switch (a.ElementType) {
 			case ElementType.Void:
 			case ElementType.Boolean:
-			case ElementType.Char:
+			case ElementType.Rune:
 			case ElementType.I1:
 			case ElementType.U1:
 			case ElementType.I2:

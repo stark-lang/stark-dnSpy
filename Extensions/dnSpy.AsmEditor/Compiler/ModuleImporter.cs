@@ -1617,7 +1617,7 @@ namespace dnSpy.AsmEditor.Compiler {
 			switch (type.ElementType) {
 			case ElementType.Void:		result = targetModule.CorLibTypes.Void; break;
 			case ElementType.Boolean:	result = targetModule.CorLibTypes.Boolean; break;
-			case ElementType.Char:		result = targetModule.CorLibTypes.Char; break;
+			case ElementType.Rune:		result = targetModule.CorLibTypes.Char; break;
 			case ElementType.I1:		result = targetModule.CorLibTypes.SByte; break;
 			case ElementType.U1:		result = targetModule.CorLibTypes.Byte; break;
 			case ElementType.I2:		result = targetModule.CorLibTypes.Int16; break;
@@ -1630,8 +1630,8 @@ namespace dnSpy.AsmEditor.Compiler {
 			case ElementType.R8:		result = targetModule.CorLibTypes.Double; break;
 			case ElementType.String:	result = targetModule.CorLibTypes.String; break;
 			case ElementType.TypedByRef:result = targetModule.CorLibTypes.TypedReference; break;
-			case ElementType.I:			result = targetModule.CorLibTypes.IntPtr; break;
-			case ElementType.U:			result = targetModule.CorLibTypes.UIntPtr; break;
+			case ElementType.I:			result = targetModule.CorLibTypes.Int; break;
+			case ElementType.U:			result = targetModule.CorLibTypes.UInt; break;
 			case ElementType.Object:	result = targetModule.CorLibTypes.Object; break;
 			case ElementType.Ptr:		result = new PtrSig(Import(type.Next)); break;
 			case ElementType.ByRef:		result = new ByRefSig(Import(type.Next)); break;

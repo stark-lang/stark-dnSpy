@@ -190,7 +190,7 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl {
 			switch (et) {
 			case DMD.ElementType.Void:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Void); break;
 			case DMD.ElementType.Boolean:	result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Boolean); break;
-			case DMD.ElementType.Char:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Char); break;
+			case DMD.ElementType.Rune:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Char); break;
 			case DMD.ElementType.I1:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_SByte); break;
 			case DMD.ElementType.U1:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Byte); break;
 			case DMD.ElementType.I2:		result = AddCustomModifiers(GetCustomModifiers(), module.AppDomain.System_Int16); break;

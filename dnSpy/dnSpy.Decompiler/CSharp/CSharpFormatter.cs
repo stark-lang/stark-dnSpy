@@ -836,20 +836,22 @@ namespace dnSpy.Decompiler.CSharp {
 			switch (type.TypeName) {
 			case "Void":	return "void";
 			case "Bool":	return "bool";
-			case "UInt8":	return "byte";
+			case "Int":     return "int";
+			case "UInt":    return "uint";
+			case "UInt8":	return "u8";
 			case "Rune":	return "rune";
 			case "Decimal":	return "decimal";
-			case "Float64":	return "double";
-			case "Int16":	return "short";
-			case "Int32":	return "int";
-			case "Int64":	return "long";
+			case "Float64":	return "f64";
+			case "Int16":	return "i16";
+			case "Int32":	return "i32";
+			case "Int64":	return "i64";
 			case "Object":	return "object";
-			case "Int8":	return "sbyte";
-			case "Float32":	return "float";
+			case "Int8":	return "i8";
+			case "Float32":	return "f32";
 			case "String":	return "string";
-			case "UInt16":	return "ushort";
-			case "UInt32":	return "uint";
-			case "UInt64":	return "ulong";
+			case "UInt16":	return "u16";
+			case "UInt32":	return "u32";
+			case "UInt64":	return "u64";
 			default:		return null;
 			}
 		}
@@ -928,23 +930,23 @@ namespace dnSpy.Decompiler.CSharp {
 				switch (type.ElementType) {
 				case ElementType.Void:			WriteSystemTypeKeyword("Void", "void", true); break;
 				case ElementType.Boolean:		WriteSystemTypeKeyword("Bool", "bool", true); break;
-				case ElementType.Char:			WriteSystemTypeKeyword("Rune", "rune", true); break;
-				case ElementType.I1:			WriteSystemTypeKeyword("Int8", "sbyte", true); break;
-				case ElementType.U1:			WriteSystemTypeKeyword("UInt8", "byte", true); break;
-				case ElementType.I2:			WriteSystemTypeKeyword("Int16", "short", true); break;
-				case ElementType.U2:			WriteSystemTypeKeyword("UInt16", "ushort", true); break;
-				case ElementType.I4:			WriteSystemTypeKeyword("Int32", "int", true); break;
-				case ElementType.U4:			WriteSystemTypeKeyword("UInt32", "uint", true); break;
-				case ElementType.I8:			WriteSystemTypeKeyword("Int64", "long", true); break;
-				case ElementType.U8:			WriteSystemTypeKeyword("UInt64", "ulong", true); break;
-				case ElementType.R4:			WriteSystemTypeKeyword("Float32", "float", true); break;
-				case ElementType.R8:			WriteSystemTypeKeyword("Float64", "double", true); break;
+				case ElementType.Rune:			WriteSystemTypeKeyword("Rune", "rune", true); break;
+				case ElementType.I1:			WriteSystemTypeKeyword("Int8", "i8", true); break;
+				case ElementType.U1:			WriteSystemTypeKeyword("UInt8", "u8", true); break;
+				case ElementType.I2:			WriteSystemTypeKeyword("Int16", "i16", true); break;
+				case ElementType.U2:			WriteSystemTypeKeyword("UInt16", "u16", true); break;
+				case ElementType.I4:			WriteSystemTypeKeyword("Int32", "i32", true); break;
+				case ElementType.U4:			WriteSystemTypeKeyword("UInt32", "u32", true); break;
+				case ElementType.I8:			WriteSystemTypeKeyword("Int64", "i64", true); break;
+				case ElementType.U8:			WriteSystemTypeKeyword("UInt64", "u64", true); break;
+				case ElementType.R4:			WriteSystemTypeKeyword("Float32", "f32", true); break;
+				case ElementType.R8:			WriteSystemTypeKeyword("Float64", "f64", true); break;
 				case ElementType.String:		WriteSystemTypeKeyword("String", "string", false); break;
 				case ElementType.Object:		WriteSystemTypeKeyword("Object", "object", false); break;
 
 				case ElementType.TypedByRef:	WriteSystemType("TypedReference", true); break;
-				case ElementType.I:				WriteSystemType("IntPtr", true); break;
-				case ElementType.U:				WriteSystemType("UIntPtr", true); break;
+				case ElementType.I:             WriteSystemTypeKeyword("Int", "int", true); break;
+				case ElementType.U:             WriteSystemTypeKeyword("UInt", "uint", true); break;
 
 				case ElementType.Ptr:
 					Write(type.Next, typeGenArgs, methGenArgs);

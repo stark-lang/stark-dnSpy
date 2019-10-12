@@ -57,7 +57,7 @@ namespace dnSpy.AsmEditor.DnlibDialogs {
 		static readonly ConstantType[] constantTypes = new ConstantType[] {
 			ConstantType.Null,
 			ConstantType.Boolean,
-			ConstantType.Char,
+			ConstantType.Rune,
 			ConstantType.SByte,
 			ConstantType.Byte,
 			ConstantType.Int16,

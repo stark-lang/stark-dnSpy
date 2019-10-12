@@ -29,7 +29,7 @@ namespace dnSpy.Debugger.DotNet.Metadata.Impl.MD {
 					return false;
 				return reader.ReadBoolean();
 
-			case ElementType.Char:
+			case ElementType.Rune:
 				if (reader.Length < 2)
 					return (char)0;
 				return reader.ReadChar();
